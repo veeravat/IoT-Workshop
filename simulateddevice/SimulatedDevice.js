@@ -3,7 +3,7 @@
 var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
 var Message = require('azure-iot-device').Message;
 
-var connectionString = 'HostName={youriothostname};DeviceId=myFirstNodeDevice;SharedAccessKey={yourdevicekey}';
+var connectionString = '{Device connection string}';
 
 var client = clientFromConnectionString(connectionString);
 
@@ -24,7 +24,13 @@ var connectCallback = function(err) {
         setInterval(function() {
             var temperature = 20 + (Math.random() * 15);
             var humidity = 60 + (Math.random() * 20);
-            var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', temperature: temperature, humidity: humidity });
+            var data = JSON.stringify({
+                deviceId: 'myFirstNodeDevice',
+                temperature: temperature,
+                humidity: humidity,
+                latitude: 18.8094062,
+                longtitude: 98.9523876
+            });
             var message = new Message(data);
             message.properties.add('temperatureAlert', (temperature > 30) ? 'true' : 'false');
             console.log("Sending message: " + message.getData());

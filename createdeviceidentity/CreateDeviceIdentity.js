@@ -2,21 +2,26 @@
 
 var iothub = require('azure-iothub');
 
-var connectionString = '{iothub connection string}';
+var connectionString = '{}';
 
 var registry = iothub.Registry.fromConnectionString(connectionString);
 
 var device = {
-    deviceId: 'myFirstNodeDevice'
+    deviceId: 'DeviceID'
 }
-registry.create(device, function(err, deviceInfo, res) {
-    if (err) {
-        registry.get(device.deviceId, printDeviceInfo);
-    }
-    if (deviceInfo) {
-        printDeviceInfo(err, deviceInfo, res)
-    }
-});
+CreateDevice(device);
+
+function CreateDevice(device) {
+    registry.create(device, function(err, deviceInfo, res) {
+        if (err) {
+            registry.get(device.deviceId, printDeviceInfo);
+        }
+        if (deviceInfo) {
+            printDeviceInfo(err, deviceInfo, res)
+        }
+    });
+}
+
 
 function printDeviceInfo(err, deviceInfo, res) {
     if (deviceInfo) {
