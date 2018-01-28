@@ -1,0 +1,1 @@
+This is example code to run simulation device that connect to Azure IoTHub
