@@ -2,7 +2,7 @@
 
 var iothub = require('azure-iothub');
 
-var connectionString = '{}';
+var connectionString = '{iothub connection string}';
 
 var registry = iothub.Registry.fromConnectionString(connectionString);
 
