@@ -2,7 +2,7 @@
 
 var iothub = require('azure-iothub');
 
-var connectionString = 'HostName=iothub-tuymove.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=kJtqZWw+l4Vvpdug1uEsCVzyVveL6swE2opb+sf8tNc=';
+var connectionString = '{iothub connection string}';
 
 var registry = iothub.Registry.fromConnectionString(connectionString);
 

@@ -3,7 +3,7 @@
 var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
 var Message = require('azure-iot-device').Message;
 
-var connectionString = 'HostName=iothub-tuymove.azure-devices.net;DeviceId=myFirstNodeDevice;SharedAccessKey=SCrESSW7yr766tnBeZ7Eqmp6On8Sm8nry72Zf/Xnb+A=';
+var connectionString = 'HostName={youriothostname};DeviceId=myFirstNodeDevice;SharedAccessKey={yourdevicekey}';
 
 var client = clientFromConnectionString(connectionString);
 
